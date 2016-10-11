@@ -1,3 +1,9 @@
+[![Laravel 5.x](https://img.shields.io/badge/Laravel-5.x-orange.svg)](http://laravel.com)
+[![Latest Stable Version](https://poser.pugx.org/traknpay/checkout/version)](https://packagist.org/packages/traknpay/checkout)
+[![Latest Unstable Version](https://poser.pugx.org/traknpay/checkout/v/unstable)](//packagist.org/packages/traknpay/checkout)
+[![Total Downloads](https://poser.pugx.org/traknpay/checkout/downloads)](https://packagist.org/packages/traknpay/checkout)
+[![License](https://poser.pugx.org/yajra/laravel-datatables-oracle/license)](https://packagist.org/packages/yajra/laravel-datatables-oracle)
+
 # Checkout
 Traknpay/Checkout is a Laravel package to integrate traknpay payment gateway in your laravel 5.X package
 
