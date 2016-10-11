@@ -48,7 +48,11 @@ For the rest of the parameters that need to be sent , refer the traknpay payment
 To post the payment parameters to traknpay gateway.
 
 ```php
-   
-    Checkout::post($parameters);
-
+    Checkout::post([
+        'order_id'       => '10',
+        'amount'         => '201.00',
+        'name'           => 'Payer Name',
+        'email'          => 'Payer@example.com',
+        'phone'          => '9876543210',
+    ]);
 ```
