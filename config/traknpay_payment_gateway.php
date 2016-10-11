@@ -7,6 +7,11 @@
 return [
 
 	/**
+	 * Your server URL
+	 */
+	'app_url'            => 'http://localhost:8000',
+
+	/**
 	 * api key given to the merchant by traknpay
 	 */
 	'api_key'            => '',
@@ -17,9 +22,9 @@ return [
 	'salt'               => '',
 
 	/**
-	 * return url to which payment response from the traknpay will be posted.
+	 * return url to which payment response from the traknpay will be posted. replace localhost:8000 with your server URL
 	 */
-	'return_url'         => '',
+	'return_url'         => '/response',
 
 	/**
 	 * biz url to which payment request will be posted.
@@ -91,5 +96,5 @@ return [
 	/**
 	 * function name which will handle the response parameters from traknpay payment.
 	 */
-	'response_handler' => 'TraknPay\Checkout\Checkout@handleResponse',
+	'response_handler'   => 'TraknPay\Checkout\Checkout@handleResponse',
 ];

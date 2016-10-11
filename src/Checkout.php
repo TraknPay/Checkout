@@ -27,7 +27,7 @@ class Checkout {
 		/*Over riding the payment parameters from config file */
 		$payment_parameters['api_key'] = $this->config->api_key;
 		$payment_parameters['mode'] = $this->config->mode;
-		$payment_parameters['return_url'] = $this->config->return_url;
+		$payment_parameters['return_url'] = $this->config->app_url.$this->config->return_url;
 		$payment_parameters['hash'] = $this->generateHash($payment_parameters);
 
 		$payment_url = $this->config->biz_url;
