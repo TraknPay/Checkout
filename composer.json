@@ -1,22 +1,20 @@
 {
   "name": "TraknPay/Checkout",
-  "description": "",
+  "description": "TraknPay Payment Gateway Integration",
   "keywords": [],
-  "homepage": "",
+  "homepage": "http://www.traknpay.com",
   "license": "MIT",
   "authors": [
     {
-      "name": "",
-      "email": ""
+      "name": "Sharathkumar Hegde",
+      "email": "sharathkumar.hegde@omniware.in"
     }
   ],
   "require": {
-    "php": ">=5.4.0",
-    "illuminate/config": "~5.0",
-    "illuminate/support": "~5.0"
+    "php": ">=5.4.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.0"
+
   },
   "autoload": {
     "psr-4": {
