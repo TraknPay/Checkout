@@ -78,30 +78,30 @@ There is an inbuilt response handler but that does not do much, apart from showi
 
 3. In `handleResponse` function, perform hash check and then update your payment status.
 
-```php
-
-    use TraknPay\Checkout\Facades\Checkout;
-
-    class PaymentController extends Controller
-    {
-        public  function handleResponse(Request $request) {
-            if(Checkout::checkResponseHash($request->all())){
-                // if checkResponseHash returns true, continue to save the response.
-            } else {
-                // if checkResponseHash returns false , then it means that response might be tampered
+    ```php
+    
+        use TraknPay\Checkout\Facades\Checkout;
+    
+        class PaymentController extends Controller
+        {
+            public  function handleResponse(Request $request) {
+                if(Checkout::checkResponseHash($request->all())){
+                    // if checkResponseHash returns true, continue to save the response.
+                } else {
+                    // if checkResponseHash returns false , then it means that response might be tampered
+                }
             }
         }
-    }
-```
+    ```
 
 4. Add the new route to `web.php` file.
-```php
-    Route::post('/paymentresponse','PaymentController@handleResponse');
-```
+    ```php
+        Route::post('/paymentresponse','PaymentController@handleResponse');
+    ```
 5. Add this route in exception list of VerifyCsrfToken in the middleware.
 
 6. Update `app_url` and `return_url` in `config/traknpay_payment_gateway.php`.
-```php
-    'app_url'    => 'http://your-site.com'
-    'return_url' => '/paymentresponse'
-```
+    ```php
+        'app_url'    => 'http://your-site.com'
+        'return_url' => '/paymentresponse'
+    ```
