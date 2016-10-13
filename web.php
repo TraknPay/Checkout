@@ -4,5 +4,4 @@
  * Your package routes would go here
  */
 
-Route::post('/response',$this->app->config->get('traknpay_payment_gateway.response_handler', true)
-)->name('response');
+Route::post('/response','TraknPay\Checkout\Checkout@handleResponse')->name('response');

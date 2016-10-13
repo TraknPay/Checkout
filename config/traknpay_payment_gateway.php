@@ -93,8 +93,4 @@ return [
 		'udf4'           => '',
 		'udf5'           => '',
 	],
-	/**
-	 * function name which will handle the response parameters from traknpay payment.
-	 */
-	'response_handler'   => 'TraknPay\Checkout\Checkout@handleResponse',
 ];
