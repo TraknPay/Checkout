@@ -37,7 +37,7 @@ Open this file and provide values in following parameters
     'app_url'
     'salt'
     'mode'
-    'return_handler'
+    'response_handler'
 
 **'app_url'** is to be set to your server url, by default it is set to http://localhost:8000, do not add '/' at end of this url
 
@@ -45,7 +45,7 @@ Open this file and provide values in following parameters
 
 **'mode'** value can be either TEST or LIVE.
 
-**'return_handler'** will be controller function which will handle the 
+**'response_handler'** will be controller function which will handle the 
 response parameter sent back from traknpay payment gateway. Nampsapce\Of\Controller\TestController@responseHandler
 
 For the rest of the parameters that need to be sent , refer the traknpay payment document.
@@ -61,4 +61,37 @@ To post the payment parameters to traknpay gateway.
         'email'          => 'Payer@example.com',
         'phone'          => '9876543210',
     ]);
+```
+### Handeling Response ###
+There is an inbuilt response handler but that does not do much, apart from showing if the transaction was `Successful` or `Failed`.
+ To handle the response on your own, use the following steps.
+
+1. Create a controller (e.g. `TestController`)
+
+2. Create a function within this controller(e.g. `handleResponse`)
+
+3. In `handleResponse` function, perform hash check and then update your payment status.
+
+```php
+    class TestController extends Controller
+    {
+        public  function handleResponse(Request $request) {
+            if(Checkout:hashCheck($request->all())){
+                // if hashCheck returns true, continue to save the response.
+            } else {
+                // if hashCheck returns false , then it means that response might be tampered
+            }
+        }
+    }
+```
+
+4. Add the new route to `web.php` file.
+```php
+    Route::post('/paymentresponse','TestController@handleResponse');
+```
+5. Add this route in exception list of Verify Csrf Token middleware.
+
+6. Update 'return_url' in config/traknpay_payment_gateway.php
+```php
+    'return_url'=>'http://yoursite.com/paymentresponse'
 ```
