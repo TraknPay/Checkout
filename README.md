@@ -15,21 +15,31 @@ This package is used to integrate with traknpay api payment request.
  
 ## Quick Installation ##
 
+To get started, install Checkout via the Composer package manager:
+
     composer require traknpay/checkout
 
 ### Service Provider ###
+
+Next,register the Checkout service provider in the providers array of your config/app.php configuration file:
+
     TraknPay\Checkout\CheckoutServiceProvider::class
 
 ### Facade ###
+
+Add 'Checkout' facade in the aliases array of your config/app.php configuration file:
+
     'Checkout'=>TraknPay\Checkout\Facades\Checkout::class
 
 ### Configuration ###
+
+Publish the configuration:
 
     $ php artisan vendor:publish
 
 **config/traknpay_payment_gateway.php**
 
-This is the configuration file that Laravel will publish into it's config directory.
+This is the configuration file that Laravel will publish into your config directory.
 
 Open this file and provide values in following parameters
 
@@ -40,7 +50,7 @@ Open this file and provide values in following parameters
 
 **'app_url'** is to be set to your server url, by default it is set to `http://localhost:8000`, do not add `'/'` at end of this url
 
-**'api_key'** and 'salt' values are provided by Traknpay.
+**'api_key'** and **'salt'** values are provided by Traknpay.
 
 **'mode'** value can be either `TEST` or `LIVE`.
 
@@ -85,7 +95,7 @@ There is an inbuilt response handler but that does not do much, apart from showi
 ```php
     Route::post('/paymentresponse','PaymentController@handleResponse');
 ```
-5. Add this route in exception list of Verify Csrf Token middleware.
+5. Add this route in exception list of VerifyCsrfToken in the middleware.
 
 6. Update `app_url` and `return_url` in `config/traknpay_payment_gateway.php`.
 ```php
