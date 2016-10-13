@@ -54,7 +54,7 @@ Open this file and provide values in following parameters
 
 **'mode'** value can be either `TEST` or `LIVE`.
 
-For the rest of the parameters that need to be sent , refer the traknpay payment document.
+For the rest of the parameters that need to be sent , please refer the traknpay integration document [TraknPay_Integration_Guide_Ver1.4.1](https://bitbucket.org/OmniwareIntegrationTeam/traknpay_integrations_plugins/downloads/Trak%20'n%20Pay%20Integration%20Guide%20Ver1.4.1.pdf).
 
 ## Usage  ##
 To post the payment parameters to traknpay gateway.
