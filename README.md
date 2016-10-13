@@ -35,7 +35,7 @@ Add 'Checkout' facade in the aliases array of your config/app.php configuration 
 
 Publish the configuration:
 
-    $ php artisan vendor:publish
+    php artisan vendor:publish
 
 **config/traknpay_payment_gateway.php**
 
@@ -79,10 +79,13 @@ There is an inbuilt response handler but that does not do much, apart from showi
 3. In `handleResponse` function, perform hash check and then update your payment status.
 
 ```php
+
+    use TraknPay\Checkout\Facades\Checkout;
+
     class PaymentController extends Controller
     {
         public  function handleResponse(Request $request) {
-            if(Checkout:checkResponseHash($request->all())){
+            if(Checkout::checkResponseHash($request->all())){
                 // if checkResponseHash returns true, continue to save the response.
             } else {
                 // if checkResponseHash returns false , then it means that response might be tampered
