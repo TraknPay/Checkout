@@ -10,8 +10,10 @@ Traknpay/Checkout is a Laravel package to integrate traknpay payment gateway in 
 This package is used to integrate with traknpay api payment request.
 
 ## Requirements ##
+The Checkout package is working fine in Laravel 5.1 and 5.3.However , in laravel 5.2, there is a minor issue when response is not handled.If response is handled as described in the below steps then there would be no issue.
+
  1. PHP 5.4.0 or later
- 2. Laravel 5.3
+ 2. Laravel 5.1 or 5.3
  
 ## Quick Installation ##
 
