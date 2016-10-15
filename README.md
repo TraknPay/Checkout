@@ -59,7 +59,7 @@ Open this file and provide values in following parameters
 For the rest of the parameters that need to be sent , please refer the traknpay integration document [TraknPay_Integration_Guide_Ver1.4.1](https://bitbucket.org/OmniwareIntegrationTeam/traknpay_integrations_plugins/downloads/Trak%20'n%20Pay%20Integration%20Guide%20Ver1.4.1.pdf).
 
 ## Usage  ##
-To post the payment parameters to traknpay gateway.
+To post the payment parameters to traknpay gateway, on clicking checkout button do following.
 
 ```php
     Checkout::post([
@@ -70,7 +70,7 @@ To post the payment parameters to traknpay gateway.
         'phone'          => '9876543210',
     ]);
 ```
-### Handeling Response ###
+### Handling Response ###
 There is an inbuilt response handler but that does not do much, apart from showing if the transaction was `Successful` or `Failed`.
  To handle the response on your own, use the following steps.
 
