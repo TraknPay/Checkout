@@ -29,7 +29,7 @@ return [
 	/**
 	 * biz url to which payment request will be posted.
 	 */
-	'biz_url'            => 'https://biz.traknpay.in/v1/paymentrequest',
+	'biz_url'            => 'https://biz.traknpay.in/v2/paymentrequest',
 
 	/**
 	 * mode type , either TEST or LIVE
